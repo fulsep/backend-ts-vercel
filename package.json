@@ -5,7 +5,7 @@
   "main": "dist/app.js",
   "scripts": {
     "start": "npm run build && node dist/app.js",
-    "build": "npm run clean && tsc --build && cp ./package.json ./dist/package.json && cd ./dist && npm install --legacy-peer-deps",
+    "build": "npm run clean && tsc --build && cp ./package.json ./dist/package.json && cp ./package-lock.json ./dist/package-lock.json && cp -r ./node_modules ./dist/node_modules",
     "clean": "rimraf ./dist",
     "dev": "nodemon app.ts",
     "lint": "eslint app.ts src/**/*.ts",

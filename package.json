@@ -1,0 +1,35 @@
+{
+  "name": "backend-ts-vercel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/app.js",
+  "scripts": {
+    "start": "npm run build && node dist/app.js",
+    "build": "npm run clean && tsc --build && cp ./package.json ./dist/package.json && cd ./dist && npm install --legacy-peer-deps",
+    "clean": "rimraf ./dist",
+    "dev": "nodemon app.ts",
+    "lint": "eslint app.ts src/**/*.ts",
+    "lint:fix": "eslint app.ts src/**/*.ts --fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.3.0",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/morgan": "^1.9.9",
+    "eslint": "^9.3.0",
+    "globals": "^15.3.0",
+    "nodemon": "^3.1.2",
+    "rimraf": "^5.0.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^7.11.0"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "morgan": "^1.10.0"
+  }
+}
